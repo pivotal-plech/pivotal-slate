@@ -2,6 +2,8 @@
 @import 'normalize';
 @import 'variables';
 @import 'icon-font';
+@import 'pui-variables';
+@import 'typography';
 
 /*
 Copyright 2008-2013 Concur Technologies, Inc.
@@ -25,12 +27,12 @@ under the License.
 
 html, body {
   color: $main-text;
+  font-family: 'sourcesanspro-regular-webfont', sans-serif !important;
   padding: 0;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @extend %default-font;
-  background-color: $main-bg;
+  background-color: $dark-11;
   height: 100%;
   -webkit-text-size-adjust: none; /* Never autoresize text */
 }
@@ -66,7 +68,7 @@ html, body {
   left: 0;
   bottom: 0;
   width: $nav-width;
-  background-color: $nav-bg;
+  background-color: $dark-2;
   font-size: 13px;
   font-weight: bold;
 
@@ -89,9 +91,9 @@ html, body {
     position: relative;
 
     input {
-      background: $nav-bg;
+      background: $dark-1;
       border-width: 0 0 1px 0;
-      border-color: $search-box-border-color;
+      border-color: $dark-3;
       padding: 6px 0 6px 20px;
       box-sizing: border-box;
       margin: $nav-v-padding $nav-padding;
@@ -173,8 +175,8 @@ html, body {
 
   // This is the currently selected ToC entry
   .tocify-focus {
-    box-shadow: 0px 1px 0px $nav-active-shadow;
-    background-color: $nav-active-bg;
+    box-shadow: 0px 1px 0px $dark-1, inset 3px 0 0 #1BB3A8, 0px -1px 0px $dark-1;
+    background-color: transparent;
     color: $nav-active-text;
   }
 
@@ -261,7 +263,7 @@ html, body {
   margin-left: $nav-width;
   position: relative;
   z-index: 10;
-  background-color: $main-bg;
+  background-color: $dark-11;
   min-height: 100%;
 
   padding-bottom: 1px; // prevent margin overflow
@@ -273,7 +275,7 @@ html, body {
   // half of the content always this background color.
   .dark-box {
     width: $examples-width;
-    background-color: $examples-bg;
+    background-color: $dark-2;
     position: absolute;
     right: 0;
     top: 0;
@@ -283,12 +285,12 @@ html, body {
   .lang-selector {
     position: fixed;
     z-index: 50;
-    border-bottom: 5px solid $lang-select-active-bg;
+    border-bottom: 5px solid rgba(0,0,0,.3);
   }
 }
 
 .lang-selector {
-  background-color: $lang-select-bg;
+  background-color: $dark-1;
   width: 100%;
   font-weight: bold;
   a {
@@ -301,12 +303,12 @@ html, body {
     outline: 0;
 
     &:active, &:focus {
-      background-color: $lang-select-pressed-bg;
+      background-color: rgba(0,0,0,.3);
       color: $lang-select-pressed-text;
     }
 
     &.active {
-      background-color: $lang-select-active-bg;
+      background-color: rgba(0,0,0,.3);
       color: $lang-select-active-text;
     }
   }
@@ -339,8 +341,6 @@ html, body {
     padding: 0 $main-padding;
     box-sizing: border-box;
     display: block;
-    text-shadow: $main-embossed-text-shadow;
-
     @extend %left-col;
   }
 
@@ -354,7 +354,6 @@ html, body {
   }
 
   h1 {
-    @extend %header-font;
     font-size: 30px;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
@@ -363,6 +362,7 @@ html, body {
     margin-top: 2em;
     border-top: 1px solid #ddd;
     background-image: linear-gradient(to bottom, #fff, #f9f9f9);
+    font-weight: 400;
   }
 
   h1:first-child, div:first-child + h1 {
@@ -522,7 +522,7 @@ html, body {
 
 .content {
   pre, blockquote {
-    background-color: $code-bg;
+    background-color: $dark-1;
     color: #fff;
 
     padding: 2em $main-padding;
