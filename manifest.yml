@@ -1,0 +1,5 @@
+---
+applications:
+- name: slate-pivotal
+  mem: 500MB
+  buildpack: https://github.com/cloudfoundry/staticfile-buildpack
